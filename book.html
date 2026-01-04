@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - Smart Parking</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Smart Parking Slot Booking</h1>
+            <nav>
+                <a href="index.html">Book Slot</a>
+                <a href="bookings.html" class="active">My Bookings</a>
+            </nav>
+
+            <div id="theme-controls" class="theme-controls" role="region" aria-label="Theme selector">
+                <label for="theme-select" style="color:white; font-weight:500; margin-right:6px;">Theme</label>
+                <select id="theme-select" style="padding:8px; border-radius:4px;">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                </select>
+            </div>
+        </header>
+
+        <main>
+            <div class="info-section">
+                <h2>My Bookings</h2>
+                <div class="filter-section">
+                    <label for="filter-email">Filter by Email or Phone:</label>
+                    <input type="email" id="filter-email" placeholder="Enter your email">
+                    <input type="tel" id="filter-phone" placeholder="Enter phone number (e.g., +91 9876543210)" style="min-width:200px;">
+                    <button class="btn btn-primary" id="filter-btn">Filter</button>
+                    <button class="btn btn-secondary" id="clear-filter">Clear</button>
+                </div>
+
+                <!-- Active filter tags -->
+                <div id="active-filters" class="active-filters" aria-live="polite"></div>
+            </div>
+
+            <div id="bookings-container">
+                <div id="loading" class="loading">Loading bookings...</div>
+                <div id="bookings-list" class="bookings-list">
+                    <!-- Bookings will be dynamically loaded here -->
+                </div>
+                <div id="no-bookings" class="no-bookings" style="display: none;">
+                    <p>No bookings found.</p>
+                </div>
+            </div>
+
+            <!-- Success/Error Messages -->
+            <div id="message" class="message"></div>
+        </main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/bookings.js"></script>
+</body>
+</html>
+
